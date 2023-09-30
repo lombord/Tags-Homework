@@ -1,0 +1,24 @@
+{% extends 'base_app/base.html' %}
+{% block content %}
+  <div>
+    <h2 class="h1 text-secondary text-center">
+      Filters
+    </h2>
+    <div class="d-flex flex-column gap-3">
+      {% for fil in filters %}
+        {% with tag=fil %}
+          {% include 'base_app/tag.html' %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+    <hr />
+    <h2 class="h1 text-secondary text-center">
+      TAGS
+    </h2>
+    <div class="d-flex flex-column gap-3">
+      {% for tag in tags %}
+        {% include 'base_app/tag.html' %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
